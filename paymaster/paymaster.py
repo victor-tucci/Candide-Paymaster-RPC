@@ -83,6 +83,7 @@ def pm_sponsorUserOperation(request, token_address) -> Result:
 def pm_getApprovedTokens() -> Result:
     result = []
     approved_tokens = ERC20ApprovedToken.objects.filter(chains__has_key=env('chainId'))
+    print('approved_tokens',approved_tokens)
     for approvedToken in approved_tokens:
         token = approvedToken.chains[env('chainId')]
         exchange_rate = _get_token_rate(token)
@@ -93,6 +94,15 @@ def pm_getApprovedTokens() -> Result:
         })
     return Success(result)
 
+@method
+def pm_chainId() -> Result:
+    result = env('chainId')
+    return Success(result)
+
+@method
+def pm_supportedEntryPoints() -> Result:
+    result = str(env('entryPoint_add'))
+    return Success(result)
 
 def _get_token_rate(token):
     rate_request = requests.get(token["exchangeRateSource"])
