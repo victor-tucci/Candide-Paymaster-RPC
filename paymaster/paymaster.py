@@ -140,11 +140,11 @@ def pm_sponsorUserOperation(request, token_address) -> Result:
       "inputs": [
         {
           "internalType": "contract IERC20Metadata",
-          "name": "",
+          "name": "token",
           "type": "address"
         }
       ],
-      "name": "balances",
+      "name": "balanceOfToken",
       "outputs": [
         {
           "internalType": "uint256",
@@ -260,7 +260,7 @@ def pm_sponsorUserOperation(request, token_address) -> Result:
               "type": "address"
             },
             {
-              "internalType": "enum NoValidationPaymaster.SponsoringMode",
+              "internalType": "enum LouicePaymaster.SponsoringMode",
               "name": "mode",
               "type": "uint8"
             },
@@ -285,7 +285,7 @@ def pm_sponsorUserOperation(request, token_address) -> Result:
               "type": "bytes"
             }
           ],
-          "internalType": "struct NoValidationPaymaster.PaymasterData",
+          "internalType": "struct LouicePaymaster.PaymasterData",
           "name": "paymasterData",
           "type": "tuple"
         }
@@ -332,7 +332,7 @@ def pm_sponsorUserOperation(request, token_address) -> Result:
               "type": "address"
             },
             {
-              "internalType": "enum NoValidationPaymaster.SponsoringMode",
+              "internalType": "enum LouicePaymaster.SponsoringMode",
               "name": "mode",
               "type": "uint8"
             },
@@ -357,7 +357,7 @@ def pm_sponsorUserOperation(request, token_address) -> Result:
               "type": "bytes"
             }
           ],
-          "internalType": "struct NoValidationPaymaster.PaymasterData",
+          "internalType": "struct LouicePaymaster.PaymasterData",
           "name": "",
           "type": "tuple"
         }
